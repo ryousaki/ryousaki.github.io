@@ -1,65 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Just For You</title>
+    <title>Special For You</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://files.dariku.my.id/dko103/s.css" />
+    <link rel="stylesheet" href="https://files.dariku.my.id/dks205/s.css" />
   </head>
-  <body>
-    <div class="ctnr">
-      <div class="lv">
-        <img src="https://dekatutorial.github.io/crd/lv.svg" />
-        <p>Klik Love-nya</p>
-      </div>
-      <div class="ctn">
-        <button class="btn next">[ Lanjut ]</button>
-        <button class="btn send">[ Kirim Pesan ]</button>
+  <body">
+    <div class="preload">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="container">
+      <div class="btn-c">
+        <button class="btn-start show">Klik Disini</button>
+        <button class="btn-next">Lanjut</button>
+        <button class="btn-message">Kirim Pesan</button>
       </div>
     </div>
-    <script src="https://files.dariku.my.id/dko103/s.js"></script>
+
+    <script src="https://files.dariku.my.id/dks205/s2.js"></script>
     <script>
-      // Tambahkan ucapan sesuai contoh
+      // Teks pada cover
+      textOpening = "Special For You";
+
+      // File musik
+      musik = "Musik.mp3";
+
+      // [OPSIONAL] isi background jika tidak ingin menggunakan bakground bawaan
+      background = "";
+
+      // Jika menggunakan 1 gambar, isi pada cover1 saja
+      // Atau isi semuanya jika ingin menggunakan 4 gambar
+      // Note: hanya bisa menggunakan 1 gambar atau 4 sekaligus
+      cover1 = "https://dekatutorial.github.io/v/cvr/nb1.webp";
+      cover2 = "https://dekatutorial.github.io/v/cvr/nb2.webp";
+      cover3 = "https://dekatutorial.github.io/v/cvr/nb3.webp";
+      cover4 = "https://dekatutorial.github.io/v/cvr/nb4.webp";
+
+      // Text pilih cover
+      text1 = "Pilih Cover Notebook";
+      text2 = "* Bisa custom pake foto"
+
+      // Jika ingin menambahkan ucapan ikuti seperti contoh
       konten = [
-        {
-          gambar: "Gambar",
-          ucapan: "Ucapan",
-        },
-        {
-          gambar: "Gambar",
-          ucapan: "Ucapan",
-        },
-        {
-          gambar: "Gambar",
-          ucapan: "Ucapan",
-        },
+          {
+    gambar: "stiker8.gif",
+    ucapan: "Habedeh Berry!!!",
+  },
+  {
+    gambar: "stiker2.gif",
+    ucapan: "May life's brightest joys illuminate your path",
+  },
+  {
+    gambar: "stiker3.gif",
+    ucapan: "And may each days journeys bring you closer to your dream !!!",
+  },
+  {
+    gambar: "stiker1.gif",
+    ucapan: "Cie yang namnbah tuak",
+  },
+  {
+    gambar: "stiker4.gif",
+    ucapan: "Angka nya yang nambah ya,Umur nya berkurang ya ;c",
+  },
+  {
+    gambar: "stiker5.gif",
+    ucapan: "but don't let it bothers you, just be yourself!!!",
+  },
+  {
+    gambar: "stiker6.gif",
+    ucapan: "You're so Amazing !!!",
+  },
+  {
+    gambar: "stiker7.gif",
+    ucapan: "Im happy seeing you doing your best but ...",
+  },
+  {
+    gambar: "stiker9.gif",
+    ucapan: "like i always said,dont push yourself too much!!!",
+  },
+  {
+    gambar: "stiker10.gif",
+    ucapan: "I hope everything you wish for will becomes true ",
+  },
       ];
 
-      // Masukan nama file musik didalam kutip
-      musik = "";
+      linkInstagram = "https://www.instagram.com/ryousaki.aki";
 
-      // Masukan nomor whatsapp diawali 62 (Opsional)
-      nomorWhatsapp = "";
-
-      watermark = "Made by Owner";
-
+      var swalo = Swal.mixin({ allowOutsideClick: false, reverseButtons: true });
       async function kirimPesan() {
-        var { value: mypesan } = await swalo.fire({ title: "Tulis pesan disini ^_^", input: "textarea", confirmButtonText: "Kirim" });
-        if (mypesan) {
-          await swalo.fire("Kirim pesan ke wa aku ya");
-          if (nomorWhatsapp.startsWith("62")) {
-            location.assign(`https://wa.me/${nomorWhatsapp}?text=${mypesan}`);
-          } else {
-            location.assign("https://wa.me/" + "?text=" + mypesan);
-          }
-        } else {
-          await swalo.fire({ confirmButtonText: "Iya deh", title: "Jangan dikosongin dong :)" });
-          kirimPesan();
-        }
+        location.assign(linkInstagram)
       }
 
-      DekaTutorial(konten, musik, nomorWhatsapp, kirimPesan, watermark);
+      isKlikAudio = 1;
+      DekaTutorial(konten, musik, textOpening, background, cover1, cover2, cover3, cover4, kirimPesan, isKlikAudio);
     </script>
   </body>
 </html>
