@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Special For You</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://files.dariku.my.id/dks205/s.css" />
+  </head>
+  <body">
+    <div class="preload">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="container">
+      <div class="btn-c">
+        <button class="btn-start show">Klik Disini</button>
+        <button class="btn-next">Lanjut</button>
+        <button class="btn-message">Kirim Pesan</button>
+      </div>
+    </div>
 
+    <script src="https://files.dariku.my.id/dks205/s2.js"></script>
+    <script>
+      // Teks pada cover
+      textOpening = "Special For You";
+
+      // File musik
+      musik = "";
+
+      // [OPSIONAL] isi background jika tidak ingin menggunakan bakground bawaan
+      background = "";
+
+      // Jika menggunakan 1 gambar, isi pada cover1 saja
+      // Atau isi semuanya jika ingin menggunakan 4 gambar
+      // Note: hanya bisa menggunakan 1 gambar atau 4 sekaligus
+      cover1 = "https://dekatutorial.github.io/v/cvr/nb1.webp";
+      cover2 = "https://dekatutorial.github.io/v/cvr/nb2.webp";
+      cover3 = "https://dekatutorial.github.io/v/cvr/nb3.webp";
+      cover4 = "https://dekatutorial.github.io/v/cvr/nb4.webp";
+
+      // Text pilih cover
+      text1 = "Pilih Cover Notebook";
+      text2 = "* Bisa custom pake foto"
+
+      // Jika ingin menambahkan ucapan ikuti seperti contoh
+      konten = [
+        {
+          gambar: "File gambar",
+          ucapan: "Ucapan 1",
+        },
+        {
+          gambar: "File gambar",
+          ucapan: "Ucapan 2",
+        },
+        {
+          gambar: "File gambar",
+          ucapan: "Ucapan 3",
+        },
+      ];
+
+      linkInstagram = "https://www.instagram.com/ryousaki.aki";
+
+      var swalo = Swal.mixin({ allowOutsideClick: false, reverseButtons: true });
+      async function kirimPesan() {
+        location.assign(linkInstagram)
+      }
+
+      isKlikAudio = 1;
+      DekaTutorial(konten, musik, textOpening, background, cover1, cover2, cover3, cover4, kirimPesan, isKlikAudio);
+    </script>
+  </body>
+</html>
